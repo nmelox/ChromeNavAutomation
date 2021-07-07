@@ -1,5 +1,6 @@
 from Tools.TearDown import TearDown
 from Tools.Initialize import Initialize
+from App.Chrome.Terms import Terms
 import unittest
 
 
@@ -10,7 +11,8 @@ class TestCase(unittest.TestCase):
 
     def test_OpenChrome(self):
         self.testCase = 'OpenChrome'
-        self.driver.find_element_by_id("com.android.chrome:id/terms_accept").click()
+        self.terms = Terms(self.driver)
+        self.terms.__clickAcceptButton__()
 
     def tearDown(self):
         self.teardown = TearDown(self.driver, self.testCase)
