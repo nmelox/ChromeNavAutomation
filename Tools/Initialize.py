@@ -1,11 +1,12 @@
 from appium import webdriver
 
-class Initialize:
 
+class Initialize:
 
     def __init__(self):
         self.desired_capabilities: dict[str, str]
         self.driver = None
+
     def setupConnection(self):
         self.desired_capabilities = {
             "platformVersion": "10",
